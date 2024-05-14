@@ -20,6 +20,5 @@ cities_2020/
 city_data/
 msa_data/
 census_original_files/
-zillow/
 smoothed/
 datasets/cleaned_census_api_files/msa_data/

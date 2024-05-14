@@ -40,12 +40,6 @@
   <p align="center">
     Identify which markets have the most ideal supply/demand dynamics for investors.
     <br />
-    <br />
-    <a href="https://github.com/AustinJamesWolff/housing_supply_and_demand">Main Repo</a>
-    ·
-    <a href="https://github.com/AustinJamesWolff/housing_supply_and_demand/issues">Report Bug</a>
-    ·
-    <a href="https://github.com/AustinJamesWolff/housing_supply_and_demand/issues">Request Feature</a>
   </p>
 </div>
 
@@ -106,6 +100,8 @@ The following questions will be answered:
 * Number of Jobs (BLS)
   * MSA level
   * Using the BLS API
+  * NOTE: When using this repo, please make a local `.env` file and put your BLS_KEY in there in the form of `BLS_KEY=yourkey`
+  * Before loading the app, please run `python download_bls_data.py` in the terminal to download the most recent month's data
 * Price (Zillow Home Value Index)
   * MSA level
   * Using the Data Type "ZHVI All Homes (SFR, Condo/Co-op), Time Series, Smoothed, Seasonally Adjusted ($)"
