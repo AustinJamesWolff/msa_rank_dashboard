@@ -14,6 +14,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.ticker as mticker
 from matplotlib.gridspec import GridSpec
+import streamlit as st
 
 
 # Set up Pandas defaults
@@ -25,56 +26,92 @@ from helper_functions.msa_zip_cleaning import *
 
 
 ### CALL IN DATASETS
+@st.cache_data
+def call_in_all_datasets():
 
-# Read in the smoothed job dataset
-jobs_smooth = pd.read_csv(
+    # Call in jobs_smooth
+    jobs_smooth = pd.read_csv(
     'datasets/bls/smoothed/most_recent_bls_covid_smoothed.csv')
-jobs_smooth['date'] = pd.to_datetime(jobs_smooth['date'])
-jobs_smooth = jobs_smooth[[
-    'msa_name','date','year','value','interpolated']]
-
-# Call in Zillow rental dataset
-zillow_rent = clean_zillow_dataset(
-    pd.read_csv(
-        'datasets/zillow/zillow_rental/Metro_zori_uc_sfrcondomfr_sm_sa_month.csv'
+    jobs_smooth['date'] = pd.to_datetime(jobs_smooth['date'])
+    jobs_smooth = jobs_smooth[[
+        'msa_name','date','year','value','interpolated']]
+    
+    # Call in Zillow rental dataset
+    zillow_rent = clean_zillow_dataset(
+        pd.read_csv(
+            'datasets/zillow/zillow_rental/Metro_zori_uc_sfrcondomfr_sm_sa_month.csv'
+        )
     )
-)
 
-# Call in Zillow price dataset
-zillow_price = clean_zillow_dataset(
-    pd.read_csv(
-        'datasets/zillow/zillow_median_price/Metro_zhvi_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv'
+    # Call in Zillow price dataset
+    zillow_price = clean_zillow_dataset(
+        pd.read_csv(
+            'datasets/zillow/zillow_median_price/Metro_zhvi_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv'
+        )
     )
-)
 
-# Get the insurance and property tax values
+    # Call in insurance values
+    insurance = pd.read_csv('datasets/helper_datasets/state_avg_insurance.csv')
+
+    # Call in property tax values
+    proptaxes = pd.read_csv('datasets/helper_datasets/property-taxes-by-state-2024.csv')
+
+    return jobs_smooth, zillow_rent, zillow_price, insurance, proptaxes
+
+jobs_smooth, zillow_rent, zillow_price, insurance, proptaxes = call_in_all_datasets()
 
 
+# Function to add insurance and property tax values
+def add_prop_tax_and_insurance(dataframe):
+    
+    df = dataframe.copy()
+    
+    ## Read in property tax dataset
+    proptax = pd.read_csv('datasets/helper_datasets/property-taxes-by-state-2024.csv')
 
+    # Read in abbreviations
+    state_abbr = pd.read_csv('datasets/helper_datasets/states_abbr.csv')
+    state_abbr = state_abbr.rename(columns={'State':'state'})
+
+    # Join by state name
+    proptax = proptax.merge(state_abbr, on='state', how='inner')
+    
+    # Now create state column in main df
+    df['state'] = df['msa_name'].str.split(", ").str[1]
+    
+    # Read in insurance
+    insurance = pd.read_csv('datasets/helper_datasets/state_avg_insurance.csv')
+    
+    # Join by state abbr
+    df = df.merge(insurance, on='state')
+    
+    # Now join based on state abbr
+    proptax = proptax.drop(columns={'state'})
+    proptax.rename(columns={'Abbreviation':'state',
+                           'PropertyTaxRate':'prop_tax'}, inplace=True)
+    df = df.merge(proptax, on='state')
+    df.drop(columns=['state'], inplace=True)
+    
+    return df
 
 
 
 ### MAKE FUNCTION THAT MAKES A TOTAL RANK 
 ### BASED ON MULTIPLE DEMOGRAPHICS
 
+@st.cache_data
 def make_zillow_ranking(
     df_dict,
     all_df_dict={
         "Jobs":[jobs_smooth],
-        "Median Rent":[zillow_rent],
-        "Median Price":[zillow_price],
+        "Rent":[zillow_rent],
+        "Price":[zillow_price],
     },
-    max_price=False,
-    min_rent_to_price=False,
     use_total_trend=True,
     use_average_percent=True,
     use_pct_trend=False,
     total_trend_weight_dict={},
-    average_percent_weight_dict={},
-    plot_graphs=False,
-    insurance_third_quantile=insurance_third_quantile,
-    proptaxes_third_quantile=proptaxes_third_quantile,
-    min_jobs=250_000
+    average_percent_weight_dict={}
 ):
     """
     This function ranks the invest-ability of every
@@ -99,15 +136,6 @@ def make_zillow_ranking(
             Example 2, Multiple Extra Dataframes
             {"Median Rent": [median_rent_df, 2013],
             "Population" : [population_df, 2013]}
-            
-        max_price (int): If you only want to measure and
-            compare MSAs up to a certain median price,
-            enter the max median price as an integer.
-            
-        min_rent_to_price (float): If you only want to measure and
-            compare MSAs up to a certain rent-to-price ratio
-            (based on median rent and median price values),
-            enter the minimum rent-to-price ratio as a float.
             
         use_total_trend (True/False): Set to True if you'd like
             to include the total trend weights in the ranking
@@ -143,8 +171,6 @@ def make_zillow_ranking(
                 "Jobs":3,
                 "Median Rent":3}
                 
-        plot_graphs (True/False): If True, ask for user inputs
-            and run the plot_top_10_cities() function.
             
     Returns
     -----------
@@ -208,9 +234,6 @@ def make_zillow_ranking(
         # Isolate just that city
         df = merged_df[merged_df['msa_name']==city].copy()
         
-        # Get msa code
-#         msa_code = df['msa_code'].iloc[0]
-        
         # Sort by date
         df = df.sort_values('date')
         
@@ -220,8 +243,6 @@ def make_zillow_ranking(
         # Set temp coef_df
         temp_coef_2.loc[len(temp_coef_2.index)] = np.nan
         temp_coef_2['msa_name'] = city
-#         temp_coef_2['msa_code'] = msa_code
-
         
         # Loop through each demo
         for demo in df_dict:
@@ -409,63 +430,10 @@ def make_zillow_ranking(
         final_df = final_df.merge(new_dataframe, how='left', on='msa_name')
         
     # Create rent-to-price ratio
-    final_df['rent_price_ratio'] = final_df['Median Rent']/final_df['Median Price']
-    
-    
-    # If max price, filter it
-    if max_price:
-        final_df = final_df[final_df['median_price']<=max_price].reset_index(drop=True)
+    final_df['rent_price_ratio'] = final_df['Rent']/final_df['Price']
         
-    # If min rent-price ratio, filter
-    if min_rent_to_price:
-        final_df = final_df[final_df['rent_price_ratio']>=min_rent_to_price].reset_index(drop=True)
-        
-    ### Save ranking
+    # Turn index into rank
+    final_df['rank'] = final_df.index + 1
     
-    # Make folder to save coef_df to
-    root_trend_folder = "datasets/ranked_msas"
-    create_folder(root_trend_folder)
-    trend_folder = "datasets/ranked_msas/unfiltered"
-    create_folder(trend_folder)
-    
-    # Create variable string for file naming
-    var_string = ""
-    if use_total_trend:
-        var_string += "regressionslope_"
-    for demo in df_dict:
-        var_string += demo
-        var_string += "_"
-    var_string += "rankings.csv"
-        
-    # Save coef_df
-    final_df.to_csv(f"{trend_folder}/zillow_{var_string}", index=False)
-
-    
-    # Create filter
-    def filter_msa_rankings(
-        dataframe,
-        insurance_third_quantile=insurance_third_quantile,
-        proptaxes_third_quantile=proptaxes_third_quantile,
-        min_jobs=min_jobs,
-        var_string=var_string
-    ):
-        # Begin filtering
-        df = dataframe.copy()
-        filtered = df[ 
-            (df['avg_insurance'] <= insurance_third_quantile)
-            & (df['prop_tax'] <= proptaxes_third_quantile)
-            & (df['Jobs'] >= min_jobs)
-        ]
-
-        # Save df
-        filtered_folder = "datasets/ranked_msas/filtered"
-        create_folder(filtered_folder)
-        filtered.to_csv(f"{filtered_folder}/zillow_filtered_{var_string}", index=False)
-        
-        return filtered
-    
-    # Make filtered df
-    filtered_df = filter_msa_rankings(final_df)    
-    
-    return final_df, filtered_df
+    return final_df
 

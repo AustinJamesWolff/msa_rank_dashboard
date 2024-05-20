@@ -117,8 +117,7 @@ The following questions will be answered:
 
 ### Visualizations Created
 
-* Map of Rent-to-Price ratios by city
-* Map of Rent-to-Price ratios for all tracts in a city
+* Dashboard ranking MSAs based on your criteria
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 

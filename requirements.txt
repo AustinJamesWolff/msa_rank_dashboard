@@ -1,5 +1,5 @@
 streamlit>=1.8.1
-pandas
+pandas==1.4.1
 Plost==0.2.5
 protobuf~=3.19.0
 altair==4
