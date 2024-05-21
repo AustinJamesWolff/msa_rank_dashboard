@@ -29,19 +29,22 @@
 
 
 <!-- PROJECT LOGO -->
-<br />
 <!-- <div align="center">
   <a href="https://github.com/AustinJamesWolff/housing_supply_and_demand">
     <img src="images/logo.png" alt="Logo" width="80" height="80">
   </a> -->
 
-<h3 align="center">Housing Supply and Demand Indicator</h3>
+<h3 align="center">MSA Ranking Dashboard</h3>
 
   <p align="center">
-    Identify which markets have the most ideal supply/demand dynamics for investors.
+    Identify which markets have the most ideal demographic trends for investors.
     <br />
+    <a href="https://msa-ranking.streamlit.app/"
+    target="_blank"
+    rel="noopener noreferrer">
+    Access the dashboard!
+    </a>
   </p>
-</div>
 
 
 
@@ -78,20 +81,13 @@
 
 This repo is meant to help a real estate investor determine the best market to invest into multifamily properties, and therefore prioritizes datasets such as job growth, price growth, and rent growth.
 
-The following questions will be answered:
-
-1. Which cities have the most job growth over a 10-year period? And which cities have the **fastest** job growth?
-2. Of the top 25 cities with the best job growth, which have the best rent-to-price ratio? (This could offer a better cash-on-cash return and potentially a superior IRR depending on appreciation.)
-3. Which zip codes are experiencing the most rent growth?
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
 ### Built With
 
 * Python
 * Pandas
 * GeoPandas
 * Scikit-Learn
+* Streamlit
 * Bureau of Labor Statistics (BLS) API
 * Zillow Research
 
@@ -114,10 +110,10 @@ The following questions will be answered:
   * A paid account with an MLS is required to access this data via API. Because this is a non-commercial project, a manual download is required [from here](https://www.zillow.com/research/data/).
 
 
-
 ### Visualizations Created
 
-* Dashboard ranking MSAs based on your criteria
+* Dashboard ranking MSAs based on your criteria.
+* Job, Price, and Rent Growth Graphs.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 

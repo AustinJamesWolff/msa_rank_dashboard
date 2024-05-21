@@ -2,23 +2,22 @@
 
 import warnings
 from datetime import datetime
-
-# Suppress unnecessary Shapely warning
-warnings.filterwarnings('ignore',
-                        '.*Shapely GEOS version.*')
-
 import pandas as pd
 from functools import reduce
 import numpy as np
 import streamlit as st
 
+# Import Zillow and MSA cleaning functions
+from helper_functions.msa_zip_cleaning import *
+
+# Suppress unnecessary Shapely warning
+warnings.filterwarnings('ignore',
+                        '.*Shapely GEOS version.*')
+
 
 # Set up Pandas defaults
 pd.options.display.float_format = '{:.4f}'.format
 pd.set_option("display.max_columns", None)
-
-# Import Zillow and MSA cleaning functions
-from helper_functions.msa_zip_cleaning import *
 
 
 ### CALL IN DATASETS
@@ -59,10 +58,10 @@ jobs_smooth, zillow_rent, zillow_price, insurance, proptaxes = call_in_all_datas
 
 # Function to add insurance and property tax values
 def add_prop_tax_and_insurance(dataframe):
-    
+
     df = dataframe.copy()
-    
-    ## Read in property tax dataset
+
+    # Read in property tax dataset
     proptax = pd.read_csv('datasets/helper_datasets/property-taxes-by-state-2024.csv')
 
     # Read in abbreviations
@@ -71,23 +70,23 @@ def add_prop_tax_and_insurance(dataframe):
 
     # Join by state name
     proptax = proptax.merge(state_abbr, on='state', how='inner')
-    
+
     # Now create state column in main df
     df['state'] = df['msa_name'].str.split(", ").str[1]
-    
+
     # Read in insurance
     insurance = pd.read_csv('datasets/helper_datasets/state_avg_insurance.csv')
-    
+
     # Join by state abbr
     df = df.merge(insurance, on='state')
-    
+
     # Now join based on state abbr
     proptax = proptax.drop(columns={'state'})
     proptax.rename(columns={'Abbreviation':'state',
                            'PropertyTaxRate':'prop_tax'}, inplace=True)
     df = df.merge(proptax, on='state')
     df.drop(columns=['state'], inplace=True)
-    
+
     return df
 
 
