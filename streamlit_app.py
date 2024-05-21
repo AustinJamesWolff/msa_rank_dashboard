@@ -269,4 +269,4 @@ with st.container():
             msas_to_plot_rent,
             x='date'
             )
-   
+    
