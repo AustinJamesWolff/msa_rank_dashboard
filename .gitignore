@@ -7,6 +7,7 @@ venv/
 **/__pycache__
 env/
 *.geojson
+testing_eda.ipynb
 
 
 # Specific large datasets

@@ -2,8 +2,9 @@ import streamlit as st
 st.set_page_config(layout='wide', initial_sidebar_state='expanded')
 
 import pandas as pd
-import plost
+import plotly
 import math
+from functools import reduce
 
 # Import everything from our ranking file
 from rank_msas import *
@@ -145,7 +146,7 @@ Created with ❤️ by [Austin James Wolff](https://www.linkedin.com/in/austin-j
 ''')
 
 
-# Row A
+# Row A - Ranked MSAs DataFrame
 with st.container():
     st.markdown('### Ranked MSAs')
     st.dataframe(data=rank_all[
@@ -155,32 +156,113 @@ with st.container():
              hide_index=True
         )
 
-# Row B
-seattle_weather = pd.read_csv('https://raw.githubusercontent.com/tvst/plost/master/data/seattle-weather.csv', parse_dates=['date'])
-stocks = pd.read_csv('https://raw.githubusercontent.com/dataprofessor/data/master/stocks_toy.csv')
+### Row B - Plot Top MSA Demographics
 
-c1, c2 = st.columns((7,3))
-with c1:
-    st.markdown('### Heatmap')
-    plost.time_hist(
-    data=seattle_weather,
-    date='date',
-    x_unit='week',
-    y_unit='day',
-    color=time_hist_color,
-    aggregate='median',
-    legend=None,
-    height=345,
-    use_container_width=True)
-with c2:
-    st.markdown('### Donut chart')
-    plost.donut_chart(
-        data=stocks,
-        theta=donut_theta,
-        color='company',
-        legend='bottom', 
-        use_container_width=True)
+# Clean the jobs_smooth dataset to only include the top
+# 5 MSAs in our rank_all dataframe
+top_5_msas = list(rank_all['msa_name'].head(5))
+job_df_list = []
+for msa in top_5_msas:
+    temp_df = jobs_smooth[
+        jobs_smooth['msa_name']==msa].copy()
+    temp_df.rename(columns={'value':f'{msa} Jobs'}, inplace=True)
 
-# Row C
-st.markdown('### Line chart')
-st.line_chart(seattle_weather, x = 'date', y = plot_data, height = plot_height)
+    # Sort by date
+    temp_df = temp_df.sort_values('date')
+
+    # Drop unnecessary columns
+    temp_df.drop(columns=['msa_name','year','interpolated'], inplace=True)
+    
+    job_df_list.append(temp_df)
+msas_to_plot_jobs = reduce(
+    lambda x, y: pd.merge(x, y, on='date'), job_df_list)
+
+with st.container():
+    st.markdown('#### Job Growth')
+    st.line_chart(
+            msas_to_plot_jobs,
+            x='date'
+            )
+
+    # st.markdown('#### M-o-M Job Percent Change')
+
+### COMMENTING OUT M-O-M GRAPHS
+# # Create columns
+# cols = st.columns(5)
+
+# # Adjust dataframe for col m-o-m plotting:
+# msas_to_plot_job_percent = msas_to_plot_jobs.copy()
+
+# # Only keep data past 2021 to account for COVID anomaly
+# msas_to_plot_job_percent = msas_to_plot_job_percent[
+#     msas_to_plot_job_percent['date'] >= '2021-01-01']
+
+# # Now loop through MSAs to plot M-o-M
+# for i in range(len(top_5_msas)):
+#     msa = top_5_msas[i]
+#     # Add percent change column
+#     msas_to_plot_job_percent[f'{msa} % Change'] = msas_to_plot_job_percent[f'{msa} Jobs'].pct_change()
+#     msas_to_plot_job_percent.drop(columns=[f'{msa} Jobs'], inplace=True)
+
+#     with cols[i]:
+#         st.markdown(f'{msa}')
+#         st.line_chart(
+#                 msas_to_plot_job_percent,
+#                 x='date',
+#                 y=f'{msa} % Change',
+#                 height=200
+#                 )
+
+
+### Now add Price Growth
+# Get one dataframe with top cities for price
+price_df_list = []
+for msa in top_5_msas:
+    temp_df = zillow_price[
+        zillow_price['msa_name']==msa].copy()
+    temp_df.rename(columns={'value':f'{msa} Price'}, inplace=True)
+
+    # Sort by date
+    temp_df = temp_df.sort_values('date')
+
+    # Drop unnecessary columns
+    temp_df.drop(columns=['msa_name','year'], inplace=True)
+    
+    price_df_list.append(temp_df)
+msas_to_plot_price = reduce(
+    lambda x, y: pd.merge(x, y, on='date'), price_df_list)
+
+# Now plot Price data
+with st.container():
+    st.markdown('#### Price Appreciation')
+    st.line_chart(
+            msas_to_plot_price,
+            x='date'
+            )
+
+### Now add Rent Growth
+# Get one dataframe with top cities for price
+rent_df_list = []
+for msa in top_5_msas:
+    temp_df = zillow_rent[
+        zillow_rent['msa_name']==msa].copy()
+    temp_df.rename(columns={'value':f'{msa} Rent'}, inplace=True)
+
+    # Sort by date
+    temp_df = temp_df.sort_values('date')
+
+    # Drop unnecessary columns
+    temp_df.drop(columns=['msa_name','year'], inplace=True)
+    
+    rent_df_list.append(temp_df)
+msas_to_plot_rent = reduce(
+    lambda x, y: pd.merge(x, y, on='date'), rent_df_list)
+
+# Now plot Price data
+with st.container():
+    st.markdown('#### Rent Growth')
+    st.line_chart(
+            msas_to_plot_rent,
+            x='date'
+            )
+   
