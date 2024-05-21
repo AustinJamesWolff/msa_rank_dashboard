@@ -2,7 +2,6 @@
 
 import warnings
 from datetime import datetime
-from dateutil.relativedelta import relativedelta
 
 # Suppress unnecessary Shapely warning
 warnings.filterwarnings('ignore',
@@ -11,9 +10,6 @@ warnings.filterwarnings('ignore',
 import pandas as pd
 from functools import reduce
 import numpy as np
-import matplotlib.pyplot as plt
-import matplotlib.ticker as mticker
-from matplotlib.gridspec import GridSpec
 import streamlit as st
 
 
