@@ -6,3 +6,4 @@ altair==4
 scikit-learn==1.0.2
 matplotlib==3.5.1
 python-dotenv==0.19.2
+path==16.14.0

@@ -4,6 +4,11 @@ st.set_page_config(layout='wide', initial_sidebar_state='expanded')
 import pandas as pd
 import math
 from functools import reduce
+import sys
+import path
+
+dir = path.Path(__file__).abspath()
+sys.path.append(dir.parent.parent)
 
 # Import everything from our ranking file
 from rank_msas import *
