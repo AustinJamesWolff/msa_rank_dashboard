@@ -39,6 +39,7 @@
   <p align="center">
     Identify which markets have the most ideal demographic trends for investors.
     <br />
+    <br />
     <a href="https://msa-ranking.streamlit.app/"
     target="_blank"
     rel="noopener noreferrer">
