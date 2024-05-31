@@ -111,6 +111,10 @@ This repo is meant to help a real estate investor determine the best market to i
   * Using the Data Type "ZORI (Smoothed, Seasonally Adjusted): All Homes Plus Multifamily Time Series ($)"
   * Using the Geography "Metro & U.S."
   * A paid account with an MLS is required to access this data via API. Because this is a non-commercial project, a manual download is required [from here](https://www.zillow.com/research/data/).
+* Building Permits (U.S. Census's Building Permit Survey)
+  * The 2019-Present data is downloaded via XLS from their website (no API available at this time). [Download the annual permit files by CBSA here.](https://www.census.gov/construction/bps/msamonthly.html)
+  * The 2014-2018 data is downloaded via txt file from their website. [Download them here.](https://www.census.gov/construction/bps/historical/metro_units.html)
+  * The files are cleaned and joined in the `helper_function/permit_cleaning.py` file.
 
 
 ### Visualizations Created

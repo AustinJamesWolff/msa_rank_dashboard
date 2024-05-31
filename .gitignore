@@ -8,13 +8,14 @@ venv/
 env/
 *.geojson
 testing_eda.ipynb
+# After BP interview, add all ipynb to gitignore with *.ipynb
 
 
 # Specific large datasets
 geopackages/
 ipums_data/
 for_software/
-raw/
+datasets/bls/raw/
 block_groups_2020/
 census_tracts_2020/
 cities_2020/
@@ -22,3 +23,5 @@ city_data/
 msa_data/
 census_original_files/
 datasets/cleaned_census_api_files/msa_data/
+datasets/for_publishing/
+images/

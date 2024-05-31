@@ -1,0 +1,543 @@
+msa_name,2023_population
+"Aberdeen, SD",41790.0
+"Aberdeen, WA",77290.0
+"Ada, OK",38396.0
+"Adrian, MI",97520.0
+"Alamogordo, NM",68835.0
+"Alamosa, CO",27804.0
+"Albemarle, NC",65699.0
+"Albert Lea, MN",30515.0
+"Albertville, AL",100756.0
+"Alexander City, AL",40677.0
+"Alexandria, MN",39953.0
+"Alice, TX",45510.0
+"Alma, MI",41368.0
+"Alpena, MI",28904.0
+"Altus, OK",24669.0
+"Americus, GA",33416.0
+"Amsterdam, NY",49368.0
+"Anderson Creek, NC",141477.0
+"Andrews, TX",18664.0
+"Angola, IN",34917.0
+"Arcadia, FL",35979.0
+"Ardmore, OK",48596.0
+"Arkadelphia, AR",21274.0
+"Arkansas City, KS",34157.0
+"Ashland, OH",52190.0
+"Astoria, OR",41102.0
+"Atchison, KS",16016.0
+"Athens, OH",62706.0
+"Athens, TN",69369.0
+"Athens, TX",86158.0
+"Auburn, IN",44198.0
+"Auburn, NY",74485.0
+"Augusta, ME",127259.0
+"Austin, MN",40058.0
+"Bainbridge, GA",29087.0
+"Baker City, OR",16912.0
+"Baraboo, WI",65920.0
+"Barre, VT",60142.0
+"Bartlesville, OK",53706.0
+"Batavia, NY",57529.0
+"Batesville, AR",38320.0
+"Bay City, TX",36359.0
+"Beatrice, NE",21634.0
+"Beaver Dam, WI",88231.0
+"Bedford, IN",45084.0
+"Beeville, TX",30850.0
+"Bellefontaine, OH",46057.0
+"Bemidji, MN",46718.0
+"Bennington, VT",37183.0
+"Big Rapids, MI",41099.0
+"Big Spring, TX",30554.0
+"Bishop, CA",18527.0
+"Blackfoot, ID",50395.0
+"Bloomsburg, PA",65439.0
+"Bluefield, WV",97177.0
+"Blytheville, AR",38663.0
+"Bogalusa, LA",44865.0
+"Bonham, TX",37571.0
+"Boone, NC",54748.0
+"Borger, TX",20033.0
+"Bradford, PA",39519.0
+"Brainerd, MN",99750.0
+"Branson, MO",56775.0
+"Brattleboro, VT",45966.0
+"Breckenridge, CO",37830.0
+"Brenham, TX",37007.0
+"Brevard, NC",33549.0
+"Brigham City, UT",67637.0
+"Brookhaven, MS",34702.0
+"Brookings, OR",23296.0
+"Brookings, SD",35980.0
+"Brownwood, TX",38709.0
+"Bucyrus, OH",41529.0
+"Burley, ID",48176.0
+"Burlington, IA",44341.0
+"Butte, MT",36360.0
+"Cadillac, MI",49433.0
+"Calhoun, GA",59757.0
+"Cambridge, MD",32879.0
+"Cambridge, OH",38089.0
+"Camden, AR",26434.0
+"Campbellsville, KY",37911.0
+"Cañon City, CO",50318.0
+"Canton, IL",32541.0
+"Carbondale, IL",52141.0
+"Carlsbad, NM",60275.0
+"Carroll, IA",20522.0
+"Cedar City, UT",64211.0
+"Cedartown, GA",44223.0
+"Celina, OH",42439.0
+"Centralia, IL",36673.0
+"Centralia, WA",86154.0
+"Charleston, IL",46060.0
+"Chillicothe, OH",76501.0
+"Clarksburg, WV",88707.0
+"Clarksdale, MS",20077.0
+"Clearlake, CA",67878.0
+"Cleveland, MS",28968.0
+"Clewiston, FL",56119.0
+"Clinton, IA",46158.0
+"Clovis, NM",66009.0
+"Cody, WY",30735.0
+"Coldwater, MI",45215.0
+"Columbus, MS",67197.0
+"Columbus, NE",45175.0
+"Concord, NH",157103.0
+"Connersville, IN",23362.0
+"Cookeville, TN",148226.0
+"Coos Bay, OR",64212.0
+"Corbin, KY",149563.0
+"Cordele, GA",19631.0
+"Corinth, MS",34135.0
+"Cornelia, GA",48757.0
+"Corning, NY",92162.0
+"Corsicana, TX",55635.0
+"Cortland, NY",45752.0
+"Coshocton, OH",36869.0
+"Crawfordsville, IN",38573.0
+"Crescent City, CA",26589.0
+"Crossville, TN",64760.0
+"Cullman, AL",92016.0
+"Cumberland, MD",94140.0
+"Danville, IL",71652.0
+"Danville, KY",55764.0
+"Danville, VA",101408.0
+"Decatur, IN",36288.0
+"Defiance, OH",38315.0
+"Del Rio, TX",47720.0
+"Deming, NM",25316.0
+"DeRidder, LA",36827.0
+"Detroit Lakes, MN",35283.0
+"Dickinson, ND",38054.0
+"Dixon, IL",33654.0
+"Dodge City, KS",33980.0
+"Douglas, GA",51610.0
+"Dublin, GA",59223.0
+"DuBois, PA",77090.0
+"Dumas, TX",21190.0
+"Duncan, OK",44014.0
+"Durango, CO",56407.0
+"Durant, OK",48967.0
+"Dyersburg, TN",36498.0
+"Easton, MD",37823.0
+"East Stroudsburg, PA",166053.0
+"Edwards, CO",54381.0
+"Effingham, IL",44592.0
+"El Campo, TX",41739.0
+"El Dorado, AR",37397.0
+"Elizabeth City, NC",41444.0
+"Elk City, OK",22042.0
+"Elkins, WV",27350.0
+"Elko, NV",56210.0
+"Ellensburg, WA",45508.0
+"Emporia, KS",34751.0
+"Enterprise, AL",55643.0
+"Escanaba, MI",36790.0
+"Española, NM",39876.0
+"Eufaula, AL",26865.0
+"Eureka, CA",133985.0
+"Evanston, WY",23415.0
+"Fairmont, MN",19657.0
+"Fairmont, WV",55807.0
+"Fallon, NV",25803.0
+"Faribault, MN",67948.0
+"Farmington, MO",67058.0
+"Fayetteville, TN",36169.0
+"Fergus Falls, MN",60626.0
+"Findlay, OH",74704.0
+"Fitzgerald, GA",17128.0
+"Forest City, NC",65507.0
+"Forrest City, AR",22101.0
+"Fort Dodge, IA",36485.0
+"Fort Leonard Wood, MO",53812.0
+"Fort Madison, IA",32565.0
+"Fort Morgan, CO",29524.0
+"Fort Payne, AL",72569.0
+"Frankfort, IN",32730.0
+"Frankfort, KY",76257.0
+"Franklin, KY",20195.0
+"Fredericksburg, TX",27733.0
+"Freeport, IL",43105.0
+"Fremont, NE",37187.0
+"Fremont, OH",58709.0
+"Gaffney, SC",56714.0
+"Gainesville, TX",43782.0
+"Galesburg, IL",48411.0
+"Gallipolis, OH",28986.0
+"Gallup, NM",68797.0
+"Garden City, KS",37466.0
+"Gardnerville Ranchos, NV",50686.0
+"Gillette, WY",47498.0
+"Glasgow, KY",55490.0
+"Gloversville, NY",52234.0
+"Granbury, TX",67774.0
+"Grand Rapids, MN",45365.0
+"Great Bend, KS",24899.0
+"Greencastle, IN",37567.0
+"Greeneville, TN",72577.0
+"Greenfield, MA",70836.0
+"Greensburg, IN",26399.0
+"Greenville, MS",41946.0
+"Greenville, OH",51415.0
+"Greenwood, MS",35913.0
+"Greenwood, SC",93894.0
+"Grenada, MS",30665.0
+"Guymon, OK",20371.0
+"Hailey, ID",31723.0
+"Hannibal, MO",38825.0
+"Harrison, AR",45601.0
+"Hastings, NE",40366.0
+"Hays, KS",28810.0
+"Heber, UT",79903.0
+"Hemlock Farms, PA",61247.0
+"Henderson, KY",56845.0
+"Henderson, NC",42301.0
+"Hereford, TX",18347.0
+"Hermiston, OR",92355.0
+"Hermitage, PA",108503.0
+"Hillsdale, MI",45587.0
+"Hilo, HI",207615.0
+"Hobbs, NM",72101.0
+"Holland, MI",121939.0
+"Hood River, OR",23745.0
+"Houghton, MI",39771.0
+"Hudson, NY",60470.0
+"Huntingdon, PA",43514.0
+"Huntington, IN",36781.0
+"Huntsville, TX",81268.0
+"Huron, SD",19591.0
+"Hutchinson, KS",61497.0
+"Hutchinson, MN",36785.0
+"Indiana, PA",83094.0
+"Iron Mountain, MI",30664.0
+"Jackson, WY",35781.0
+"Jacksonville, IL",36850.0
+"Jacksonville, TX",52217.0
+"Jamestown, ND",21392.0
+"Jamestown, NY",124891.0
+"Jasper, IN",43546.0
+"Jefferson, GA",88615.0
+"Jesup, GA",31373.0
+"Juneau, AK",31555.0
+"Kalispell, MT",113679.0
+"Kapaa, HI",73851.0
+"Kearney, NE",57467.0
+"Keene, NH",77703.0
+"Kendallville, IN",47430.0
+"Kennett, MO",27032.0
+"Kerrville, TX",53915.0
+"Ketchikan, AK",13738.0
+"Key West, FL",80614.0
+"Kill Devil Hills, NC",38110.0
+"Kingsland, GA",58118.0
+"Kingsville, TX",30069.0
+"Kinston, NC",54895.0
+"Kirksville, MO",29175.0
+"Klamath Falls, OR",70003.0
+"Laconia, NH",65027.0
+"La Grande, OR",25944.0
+"LaGrange, GA",104821.0
+"Lake City, FL",73063.0
+"Lake of the Woods, VA",38574.0
+"Laramie, WY",38257.0
+"Las Vegas, NM",30791.0
+"Laurel, MS",82263.0
+"Laurinburg, NC",34376.0
+"Lawrenceburg, TN",46114.0
+"Lebanon, MO",36680.0
+"Lebanon, NH",225159.0
+"Le Mars, IA",25722.0
+"Lewisburg, PA",42042.0
+"Lewisburg, TN",36961.0
+"Lewistown, PA",45922.0
+"Lexington, NE",25932.0
+"Liberal, KS",21067.0
+"Lincoln, IL",27590.0
+"Lock Haven, PA",37607.0
+"Logansport, IN",37666.0
+"Los Alamos, NM",19444.0
+"Ludington, MI",29159.0
+"Lufkin, TX",87319.0
+"Lumberton, NC",117365.0
+"Macomb, IL",26839.0
+"Madison, IN",33056.0
+"Madisonville, KY",44929.0
+"Magnolia, AR",22150.0
+"Malvern, AR",33258.0
+"Manitowoc, WI",81331.0
+"Marietta, OH",58577.0
+"Marinette, WI",65051.0
+"Marion, IN",66200.0
+"Marion, NC",44893.0
+"Marion, OH",64851.0
+"Marion, IL",66706.0
+"Marquette, MI",66999.0
+"Marshall, MN",25427.0
+"Marshall, MO",23049.0
+"Marshalltown, IA",40014.0
+"Martin, TN",33084.0
+"Martinsville, VA",63465.0
+"Maryville, MO",20695.0
+"Mason City, IA",49703.0
+"Massena, NY",106940.0
+"Mayfield, KY",36461.0
+"McAlester, OK",43479.0
+"McComb, MS",53257.0
+"McMinnville, TN",42638.0
+"McPherson, KS",30091.0
+"Meadville, PA",82001.0
+"Menomonie, WI",45794.0
+"Meridian, MS",85755.0
+"Mexico, MO",24394.0
+"Miami, OK",30287.0
+"Middlesborough, KY",23317.0
+"Milledgeville, GA",43396.0
+"Minden, LA",35238.0
+"Mineral Wells, TX",29747.0
+"Mitchell, SD",25792.0
+"Moberly, MO",24109.0
+"Monticello, IN",24917.0
+"Monticello, NY",79920.0
+"Montrose, CO",44156.0
+"Morehead City, NC",69615.0
+"Morgan City, LA",47055.0
+"Moscow, ID",41301.0
+"Moses Lake, WA",102678.0
+"Moultrie, GA",46167.0
+"Mountain Home, AR",42875.0
+"Mountain Home, ID",29724.0
+"Mount Airy, NC",71462.0
+"Mount Pleasant, MI",64118.0
+"Mount Pleasant, TX",56423.0
+"Mount Sterling, KY",47788.0
+"Mount Vernon, IL",36320.0
+"Mount Vernon, OH",63320.0
+"Murray, KY",38280.0
+"Murrells Inlet, SC",65731.0
+"Muscatine, IA",42218.0
+"Muskogee, OK",66677.0
+"Nacogdoches, TX",65375.0
+"Nantucket, MA",14444.0
+"Natchez, MS",53375.0
+"Natchitoches, LA",36291.0
+"New Bern, NC",124215.0
+"Newberry, SC",38825.0
+"New Castle, IN",48929.0
+"New Iberia, LA",67659.0
+"New Philadelphia, OH",91874.0
+"Newport, OR",50821.0
+"Newport, TN",37404.0
+"New Ulm, MN",25628.0
+"Nogales, AZ",49158.0
+"Norfolk, NE",48782.0
+"North Platte, NE",34020.0
+"North Wilkesboro, NC",66013.0
+"Norwalk, OH",58199.0
+"Oak Harbor, WA",86267.0
+"Ocean Pines, MD",54171.0
+"Oil City, PA",49431.0
+"Okeechobee, FL",41427.0
+"Olean, NY",75600.0
+"Oneonta, NY",60126.0
+"Ontario, OR",59323.0
+"Opelousas, LA",81464.0
+"Orangeburg, SC",82820.0
+"Oskaloosa, IA",21874.0
+"Othello, WA",20820.0
+"Ottawa, IL",146599.0
+"Ottawa, KS",26125.0
+"Ottumwa, IA",35166.0
+"Owatonna, MN",37421.0
+"Owosso, MI",68025.0
+"Oxford, MS",70853.0
+"Ozark, AL",49871.0
+"Pahrump, NV",55720.0
+"Palatka, FL",75955.0
+"Palestine, TX",57736.0
+"Pampa, TX",21756.0
+"Paragould, AR",46743.0
+"Paris, TN",32554.0
+"Paris, TX",62805.0
+"Payson, AZ",54003.0
+"Pella, IA",33770.0
+"Peru, IN",35402.0
+"Petoskey, MI",34123.0
+"Picayune, MS",57978.0
+"Pierre, SD",20667.0
+"Pikeville, KY",90396.0
+"Pine Bluff, AR",71039.0
+"Pittsburg, KS",38764.0
+"Plainview, TX",36851.0
+"Platteville, WI",51409.0
+"Plattsburgh, NY",78115.0
+"Plymouth, IN",46352.0
+"Ponca City, OK",43641.0
+"Pontiac, IL",35320.0
+"Poplar Bluff, MO",41948.0
+"Port Angeles, WA",77616.0
+"Port Lavaca, TX",19696.0
+"Portsmouth, OH",71969.0
+"Port Townsend, WA",33714.0
+"Pottsville, PA",143786.0
+"Price, UT",20609.0
+"Pullman, WA",48012.0
+"Putnam, CT",96692.0
+"Quincy, IL",74259.0
+"Raymondville, TX",20037.0
+"Red Bluff, CA",64896.0
+"Red Wing, MN",48035.0
+"Rexburg, ID",68743.0
+"Rice Lake, WI",46833.0
+"Richmond, IN",66127.0
+"Richmond, KY",126861.0
+"Rifle, CO",79347.0
+"Rio Grande City, TX",65934.0
+"Riverton, WY",39815.0
+"Roanoke Rapids, NC",64013.0
+"Rochelle, IL",51265.0
+"Rockingham, NC",42324.0
+"Rock Springs, WY",41249.0
+"Rolla, MO",45284.0
+"Roseburg, OR",112435.0
+"Roswell, NM",63561.0
+"Ruidoso, NM",20029.0
+"Russellville, AL",31802.0
+"Russellville, AR",84637.0
+"Ruston, LA",47962.0
+"Rutland, VT",60271.0
+"Safford, AZ",39525.0
+"St. Marys, PA",30198.0
+"Salem, OH",100182.0
+"Salina, KS",58916.0
+"Sandpoint, ID",52547.0
+"Sanford, NC",67059.0
+"Sault Ste. Marie, MI",36264.0
+"Sayre, PA",59695.0
+"Scottsbluff, NE",36373.0
+"Scottsboro, AL",53467.0
+"Seaford, DE",263509.0
+"Searcy, AR",78452.0
+"Sedalia, MO",43530.0
+"Selinsgrove, PA",39717.0
+"Selma, AL",36165.0
+"Seneca, SC",81221.0
+"Seneca Falls, NY",32349.0
+"Sevierville, TN",99415.0
+"Seymour, IN",46460.0
+"Shawano, WI",45335.0
+"Shawnee, OK",73791.0
+"Shelby, NC",101378.0
+"Shelbyville, TN",53055.0
+"Shelton, WA",68389.0
+"Sheridan, WY",32519.0
+"Show Low, AZ",109175.0
+"Sidney, OH",47765.0
+"Sikeston, MO",49711.0
+"Silver City, NM",27472.0
+"Snyder, TX",16212.0
+"Somerset, KY",66191.0
+"Somerset, PA",72197.0
+"Sonora, CA",54204.0
+"Sparta, WI",46151.0
+"Spearfish, SD",28053.0
+"Spencer, IA",16511.0
+"Spirit Lake, IA",18056.0
+"Starkville, MS",61191.0
+"Statesboro, GA",95081.0
+"Steamboat Springs, CO",38391.0
+"Stephenville, TX",44195.0
+"Sterling, CO",20619.0
+"Sterling, IL",54498.0
+"Stevens Point, WI",71024.0
+"Stillwater, OK",83352.0
+"Storm Lake, IA",20567.0
+"Sturgis, MI",60878.0
+"Sulphur Springs, TX",38172.0
+"Summerville, GA",25222.0
+"Sunbury, PA",107980.0
+"Susanville, CA",28861.0
+"Sweetwater, TX",14306.0
+"Tahlequah, OK",48185.0
+"Talladega, AL",91400.0
+"Taos, NM",34405.0
+"Taylorville, IL",33228.0
+"The Dalles, OR",26333.0
+"Thomaston, GA",28263.0
+"Thomasville, GA",71715.0
+"Tiffin, OH",54527.0
+"Tifton, GA",50463.0
+"Toccoa, GA",27228.0
+"Torrington, CT",113463.0
+"Town of Pecos, TX",11770.0
+"Troy, AL",33137.0
+"Truckee, CA",102037.0
+"Tullahoma, TN",67381.0
+"Tupelo, MS",132027.0
+"Ukiah, CA",89108.0
+"Union City, TN",30411.0
+"Urbana, OH",38845.0
+"Uvalde, TX",24960.0
+"Van Wert, OH",28704.0
+"Vermillion, SD",15431.0
+"Vernal, UT",37747.0
+"Vernon, TX",12522.0
+"Vicksburg, MS",42298.0
+"Vidalia, GA",35801.0
+"Vincennes, IN",36070.0
+"Vineyard Haven, MA",20819.0
+"Wabash, IN",30670.0
+"Wahpeton, ND",22864.0
+"Wapakoneta, OH",46050.0
+"Warren, PA",37572.0
+"Warrensburg, MO",54962.0
+"Warsaw, IN",80364.0
+"Washington, IN",33656.0
+"Washington, NC",44481.0
+"Washington Court House, OH",28817.0
+"Watertown, SD",28971.0
+"Watertown, WI",85743.0
+"Waycross, GA",56668.0
+"Waynesville, NC",62969.0
+"Weatherford, OK",39002.0
+"West Plains, MO",40735.0
+"Whitewater, WI",105822.0
+"Williston, ND",39113.0
+"Willmar, MN",43813.0
+"Wilmington, OH",41938.0
+"Wilson, NC",78970.0
+"Winchester, TN",44654.0
+"Winnemucca, NV",17136.0
+"Winona, MN",49721.0
+"Wisconsin Rapids, WI",73939.0
+"Woodward, OK",19947.0
+"Wooster, OH",116510.0
+"Worthington, MN",21727.0
+"Yankton, SD",23517.0
+"Zanesville, OH",86305.0
+"Zapata, TX",13736.0
+"Coamo, PR",53355.0
+"Coco, PR",24718.0
+"Lares, PR",27729.0
+"Utuado, PR",27242.0

@@ -276,8 +276,8 @@ def interpolate_all_msa_job_data():
     # Save file
     jobs.to_csv(filename, index=False)
 
+
 # Now run the interpolation function
 interpolate_all_msa_job_data()
 
 print("\nInterpolated BLS data saved to 'datasets/bls/smoothed/most_recent_bls_covid_smoothed.csv'.")
-

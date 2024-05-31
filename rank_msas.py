@@ -53,6 +53,7 @@ def call_in_all_datasets():
 
     return jobs_smooth, zillow_rent, zillow_price, insurance, proptaxes
 
+
 jobs_smooth, zillow_rent, zillow_price, insurance, proptaxes = call_in_all_datasets()
 
 
@@ -91,16 +92,16 @@ def add_prop_tax_and_insurance(dataframe):
 
 
 
-### MAKE FUNCTION THAT MAKES A TOTAL RANK 
-### BASED ON MULTIPLE DEMOGRAPHICS
+# MAKE FUNCTION THAT MAKES A TOTAL RANK
+# BASED ON MULTIPLE DEMOGRAPHICS
 
 @st.cache_data
 def make_zillow_ranking(
     df_dict,
     all_df_dict={
-        "Jobs":[jobs_smooth],
-        "Rent":[zillow_rent],
-        "Price":[zillow_price],
+        "Jobs" : [jobs_smooth],
+        "Rent" : [zillow_rent],
+        "Price" : [zillow_price],
     },
     use_total_trend=True,
     use_average_percent=True,
@@ -423,12 +424,18 @@ def make_zillow_ranking(
         
         # Merge to final_df
         final_df = final_df.merge(new_dataframe, how='left', on='msa_name')
-        
+
     # Create rent-to-price ratio
     final_df['rent_price_ratio'] = final_df['Rent']/final_df['Price']
-        
+  
     # Turn index into rank
     final_df['rank'] = final_df.index + 1
-    
+
     return final_df
 
+
+if __name__ == '__main__':
+
+    jobs_smooth, zillow_rent, zillow_price, insurance, proptaxes = call_in_all_datasets()
+
+    make_zillow_ranking()

@@ -19,11 +19,11 @@ def clean_BLS_msa_names(dataframe):
     df = dataframe.copy()
     
     # Get the state column
-    df['state'] = df['msa_name'].str.split(', ').str[1].str.strip()
+    df['state'] = df['msa_name'].str.split(',').str[1].str.strip().str.strip("*")
     df['state'] = df['state'].str.split('-').str[0].str.strip()
     
     # Get the first city name
-    df['city'] = df['msa_name'].str.split(', ').str[0].str.strip()
+    df['city'] = df['msa_name'].str.split(',').str[0].str.strip()
     df['city'] = df['city'].str.split('-').str[0].str.strip()
     
     # Get msa name
