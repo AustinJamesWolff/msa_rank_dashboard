@@ -115,6 +115,17 @@ This repo is meant to help a real estate investor determine the best market to i
   * The 2019-Present data is downloaded via XLS from their website (no API available at this time). [Download the annual permit files by CBSA here.](https://www.census.gov/construction/bps/msamonthly.html)
   * The 2014-2018 data is downloaded via txt file from their website. [Download them here.](https://www.census.gov/construction/bps/historical/metro_units.html)
   * The files are cleaned and joined in the `helper_function/permit_cleaning.py` file.
+* Census ACS Files 
+  * Population
+  * Median Income
+  * Median Price
+  * Total Units
+  * Vacant Units
+  * User Created-Metrics
+    *  Population-per-Unit
+    *  Jobs-per-Unit
+    *  Rent-Price Ratio
+    *  Vacancy Rate
 
 
 ### Visualizations Created
