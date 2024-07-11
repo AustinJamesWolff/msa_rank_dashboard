@@ -100,7 +100,7 @@ for num in msa_code_dict:
     end_year = datetime.now().year
 
     # Get start year
-    start_year = end_year - 9
+    start_year = end_year - 10
 
     # Get the data from the API
     headers = {'Content-type': 'application/json'}
