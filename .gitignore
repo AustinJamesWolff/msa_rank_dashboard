@@ -8,7 +8,7 @@ venv/
 env/
 *.geojson
 testing_eda.ipynb
-# After BP interview, add all ipynb to gitignore with *.ipynb
+eda.ipynb
 
 
 # Specific large datasets
