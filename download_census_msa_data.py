@@ -65,7 +65,7 @@ vacant_units_msa = download_and_format_msa_census_data(
     end_year=end_year)
 
 
-# ## Create Rent-to-Price dataset
+### Create Rent-to-Price dataset
 
 # Rename columns
 for i in range(2010, end_year + 1):
